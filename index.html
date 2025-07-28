@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Charlex Web OS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/windows_mode.css" />
+</head>
+<body>
+    <div id="desktop">
+        <div class="window" id="window1" style="top: 50px; left: 50px;">
+            <div class="window-header" onmousedown="startDrag(event, 'window1')">
+                <div class="window-controls">
+                    <div class="window-control-button close" onclick="closeWindow('window1')" title="Close"></div>
+                    <div class="window-control-button minimize" onclick="minimizeWindow('window1')" title="Minimize"></div>
+                    <div class="window-control-button maximize" onclick="maximizeWindow('window1')" title="Maximize"></div>
+                </div>
+                <div class="window-title">Welcome</div>
+                <div style="width: 48px;"></div> <!-- spacer for controls alignment -->
+            </div>
+            <div class="window-content">
+                Welcome to the Charlex Web OS!
+            </div>
+        </div>
+        <div class="window" id="noteWindow" style="top: 100px; left: 100px; display: none; flex-direction: column;">
+            <div class="window-header" onmousedown="startDrag(event, 'noteWindow')">
+                <div class="window-controls">
+                    <div class="window-control-button close" onclick="closeWindow('noteWindow')" title="Close"></div>
+                    <div class="window-control-button minimize" onclick="minimizeWindow('noteWindow')" title="Minimize"></div>
+                    <div class="window-control-button maximize" onclick="maximizeWindow('noteWindow')" title="Maximize"></div>
+                </div>
+                <div class="window-title">Note</div>
+                <div style="width: 48px;"></div> <!-- spacer for controls alignment -->
+            </div>
+            <form method="POST" action="/note" style="flex: 1; margin: 10px; display: flex; flex-direction: column;">
+                <input id="noteFileName" name="noteFileName" type="text" placeholder="Enter filename (e.g. mynote.txt)" style="margin-bottom: 8px; padding: 6px 8px; border-radius: 8px; border: none; font-size: 14px;" />
+                <textarea id="noteContent" name="noteContent" style="flex: 1; resize: none; background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 8px; padding: 8px; font-size: 14px;" placeholder="Type your note here..."></textarea>
+                <button type="button" id="saveDownloadBtn" style="margin-top: 8px; padding: 6px 12px; border: none; border-radius: 8px; background-color: #1e90ff; color: white; font-weight: bold; cursor: pointer;">Save</button>
+            </form>
+        </div>
+    </div>
+        <div id="dock">
+            <div class="dock-icon" title="Welcome Window" onclick="openWindow('window1')">
+                <img src="img/logo.jpg" alt="LOGO" />
+            </div>
+        <div class="dock-icon" title="Note Window" onclick="openWindow('noteWindow')">
+            <img src="img/note.png" alt="Note" />
+        </div>
+            <!-- Add more dock icons here -->
+        </div>
+    <script src="js/window_manager.js"></script>
+    <script src="js/note.js"></script>
+    <script src="js/mode_toggle.js"></script>
+</body>
+</html>
