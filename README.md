@@ -31,3 +31,6 @@ This project is a frontend web application that acts like a real operating syste
 This project is licensed under the MIT License.
 
 Copyright (c) 2024 Pyshwaa
+
+### screenshot
+![Screenshot](screenshots/charlex.png)
