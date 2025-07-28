@@ -40,7 +40,7 @@ body.windows-mode #dock {
     padding: 0 10px;
     width: 100vw;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 8px;
     position: fixed;
     z-index: 1000;
