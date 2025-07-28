@@ -34,3 +34,4 @@ Copyright (c) 2024 Pyshwaa
 
 ### screenshot
 ![Screenshot](screenshots/charlex.png)
+![Screenshot](screenshots/charlex-webos-windows-inspire.png)
