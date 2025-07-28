@@ -77,7 +77,7 @@ body.windows-mode .window-header {
     cursor: default;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align title to left */
+    justify-content: space-between; /* Space between title and controls */
     padding: 0 10px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
@@ -97,6 +97,9 @@ body.windows-mode .window-title {
     margin-left: 10px;
     flex-grow: 1;
     user-select: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body.windows-mode .window-control-button {
@@ -111,6 +114,17 @@ body.windows-mode .window-control-button {
     transition: background-color 0.2s ease;
     position: relative;
     top: 0;
+}
+
+body.windows-mode .window-controls {
+    display: flex;
+    gap: 8px;
+    order: 2;
+}
+
+body.windows-mode .window-header > div[style] {
+    width: 48px;
+    order: 3; /* Spacer div to the right */
 }
 
 body.windows-mode .window-control-button.close {
